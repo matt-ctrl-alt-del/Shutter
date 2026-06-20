@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://86662mbf6umd"]
+
+[ext_resource type="Script" uid="uid://bqxh7m6h8mxgm" path="res://Script/lvl1_eureka.gd" id="1_4cnal"]
+[ext_resource type="Texture2D" uid="uid://csp6t8moq07lg" path="res://Sprites/Character/Lvl1_Eureka.png" id="2_ndnet"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_liuhs"]
+atlas = ExtResource("2_ndnet")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38p47"]
+atlas = ExtResource("2_ndnet")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yigut"]
+atlas = ExtResource("2_ndnet")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0evp"]
+atlas = ExtResource("2_ndnet")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1t5q1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_liuhs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38p47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yigut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0evp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7w4rv"]
+radius = 5.0
+height = 16.0
+
+[node name="Lvl1_Eureka" type="CharacterBody2D" unique_id=879822063]
+script = ExtResource("1_4cnal")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=589950747]
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_1t5q1")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1042305394]
+zoom = Vector2(3, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=794246288]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_7w4rv")

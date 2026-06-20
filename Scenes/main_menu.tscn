@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://27nrvwtcnht8"]
 
 [ext_resource type="Script" uid="uid://cc13sx3u2ogx0" path="res://Script/main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://yeb1s7md6mxh" path="res://Sprites/button_placeholders/start_black.png" id="2_n45e2"]
+[ext_resource type="Texture2D" uid="uid://4cw2blqa5cck" path="res://Sprites/button_placeholders/start_white.png" id="3_opfnp"]
+[ext_resource type="Texture2D" uid="uid://80v531qgfxku" path="res://Sprites/button_placeholders/quit_black.png" id="4_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://chi1q5fprbi0y" path="res://Sprites/button_placeholders/quit_white.png" id="5_yhxw7"]
 
 [node name="Main_Menu" type="Control" unique_id=1937732311]
 layout_mode = 3
@@ -11,19 +15,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_28flt")
 
-[node name="Play" type="Button" parent="." unique_id=1921394605]
+[node name="Play" type="TextureButton" parent="." unique_id=1434965280]
 layout_mode = 0
 offset_left = 27.0
 offset_top = 549.0
 offset_right = 214.0
 offset_bottom = 580.0
+texture_normal = ExtResource("2_n45e2")
+texture_pressed = ExtResource("3_opfnp")
 
-[node name="Exit" type="Button" parent="." unique_id=1614359948]
+[node name="Exit" type="TextureButton" parent="." unique_id=1176177797]
 layout_mode = 0
 offset_left = 27.0
 offset_top = 590.0
 offset_right = 214.0
 offset_bottom = 620.0
+texture_normal = ExtResource("4_cp0ys")
+texture_pressed = ExtResource("5_yhxw7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=457093281]
 

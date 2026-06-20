@@ -1,0 +1,9 @@
+res://Scenes/lvl_1_map.tscn
+res://Scenes/lvl1_eureka.tscn
+res://Scenes/lvl_2_eureka.tscn
+res://Script/player.gd
+res://Scenes/level_1.tscn
+res://Script/lvl_2_eureka.gd
+res://Script/level_1.gd
+res://Script/lvl1_eureka.gd
+res://Scenes/main_menu.tscn
