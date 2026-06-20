@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://jyxfn7iuwl1g"]
 
 [ext_resource type="Script" uid="uid://dsak03anajbv4" path="res://Script/level_2.gd" id="1_1q6tm"]
-[ext_resource type="PackedScene" uid="uid://bqmo2ub18q2pe" path="res://Scenes/fade_animation.tscn" id="1_smnlx"]
+[ext_resource type="PackedScene" uid="uid://bqmo2ub18q2pe" path="res://Scenes/fade_transition.tscn" id="1_smnlx"]
 [ext_resource type="Texture2D" uid="uid://df8pc7r0y35vb" path="res://Sprites/exit.png" id="2_12fag"]
 [ext_resource type="PackedScene" uid="uid://d00f4bd0ej57o" path="res://Scenes/lvl_2_eureka.tscn" id="3_12fag"]
 

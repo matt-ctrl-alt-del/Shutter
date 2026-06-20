@@ -44,6 +44,8 @@ radius = 5.0
 height = 16.0
 
 [node name="Lvl1_Eureka" type="CharacterBody2D" unique_id=879822063]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_4cnal")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=589950747]

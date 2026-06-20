@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://80v531qgfxku" path="res://Sprites/button_placeholders/quit_black.png" id="4_cp0ys"]
 [ext_resource type="Texture2D" uid="uid://chi1q5fprbi0y" path="res://Sprites/button_placeholders/quit_white.png" id="5_yhxw7"]
 [ext_resource type="Texture2D" uid="uid://cvfgcf20ea6va" path="res://Sprites/main_menu2.png" id="6_opfnp"]
+[ext_resource type="PackedScene" uid="uid://bqmo2ub18q2pe" path="res://Scenes/fade_transition.tscn" id="7_cp0ys"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_opfnp"]
 atlas = ExtResource("6_opfnp")
@@ -178,5 +179,18 @@ position = Vector2(576, 324)
 sprite_frames = SubResource("SpriteFrames_jr6u5")
 autoplay = "default"
 
+[node name="Fade_transition" parent="." unique_id=962432107 instance=ExtResource("7_cp0ys")]
+visible = false
+z_index = 2
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Fade_timer" type="Timer" parent="Fade_transition" unique_id=990578188]
+
 [connection signal="pressed" from="Container/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Container/Exit" to="." method="_on_exit_pressed"]
+[connection signal="timeout" from="Fade_transition/Fade_timer" to="." method="_on_fade_timer_timeout"]

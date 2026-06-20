@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bdjn50e7ag26"]
 
 [ext_resource type="Script" uid="uid://b1lq77mdsl1l0" path="res://Script/level_1.gd" id="1_8ffim"]
-[ext_resource type="PackedScene" uid="uid://bqmo2ub18q2pe" path="res://Scenes/fade_animation.tscn" id="2_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://bqmo2ub18q2pe" path="res://Scenes/fade_transition.tscn" id="2_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://t4f0t73giyja" path="res://Scenes/lvl_1_map.tscn" id="3_xfk5q"]
 [ext_resource type="Texture2D" uid="uid://df8pc7r0y35vb" path="res://Sprites/exit.png" id="4_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://86662mbf6umd" path="res://Scenes/lvl1_eureka.tscn" id="5_6444e"]
@@ -118,8 +118,6 @@ size = Vector2(9, 12)
 [node name="Level1" type="Node2D" unique_id=1938528104]
 script = ExtResource("1_8ffim")
 
-[node name="fade_animation" parent="." unique_id=2109049746 instance=ExtResource("2_xfk5q")]
-
 [node name="Lvl1_Map" parent="." unique_id=55347550 instance=ExtResource("3_xfk5q")]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1971650114]
@@ -139,5 +137,7 @@ shape = SubResource("RectangleShape2D_6ssoq")
 
 [node name="Lvl1_Eureka" parent="." unique_id=879822063 instance=ExtResource("5_6444e")]
 position = Vector2(985, 47)
+
+[node name="Fade_transition" parent="." unique_id=2109049746 instance=ExtResource("2_xfk5q")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
