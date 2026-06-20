@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://df8pc7r0y35vb" path="res://Sprites/exit.png" id="4_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://86662mbf6umd" path="res://Scenes/lvl1_eureka.tscn" id="5_6444e"]
 [ext_resource type="AudioStream" uid="uid://sktt8ycswy1r" path="res://Audio/scufflinglvl1.mp3" id="6_evi0p"]
+[ext_resource type="PackedScene" uid="uid://dlnqv7probs3s" path="res://Scenes/joystick.tscn" id="7_lsmp6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6444e"]
 atlas = ExtResource("4_7p6j4")
@@ -108,7 +109,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pjppf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"exit",
 "speed": 5.0
 }]
@@ -161,5 +162,9 @@ texture = SubResource("GradientTexture2D_lsmp6")
 
 [node name="scuffling_lvl1" type="AudioStreamPlayer" parent="." unique_id=91441250]
 stream = ExtResource("6_evi0p")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1645870455]
+
+[node name="joystick" parent="CanvasLayer" unique_id=1294544369 instance=ExtResource("7_lsmp6")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
