@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://86662mbf6umd"]
+
+[node name="Lvl1_Eureka" type="CharacterBody2D" unique_id=879822063]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=589950747]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=81960712]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1042305394]

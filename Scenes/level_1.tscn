@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bdjn50e7ag26"]
+
+[ext_resource type="Script" uid="uid://b1lq77mdsl1l0" path="res://Scenes/level_1.gd" id="1_8ffim"]
+[ext_resource type="PackedScene" uid="uid://bqmo2ub18q2pe" path="res://Scenes/fade_animation.tscn" id="2_xfk5q"]
+
+[node name="Level1" type="Node2D" unique_id=1938528104]
+script = ExtResource("1_8ffim")
+
+[node name="fade_animation" parent="." unique_id=2109049746 instance=ExtResource("2_xfk5q")]
