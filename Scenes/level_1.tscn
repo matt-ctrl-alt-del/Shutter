@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://t4f0t73giyja" path="res://Scenes/lvl_1_map.tscn" id="3_xfk5q"]
 [ext_resource type="Texture2D" uid="uid://df8pc7r0y35vb" path="res://Sprites/exit.png" id="4_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://86662mbf6umd" path="res://Scenes/lvl1_eureka.tscn" id="5_6444e"]
+[ext_resource type="AudioStream" uid="uid://sktt8ycswy1r" path="res://Audio/scufflinglvl1.mp3" id="6_evi0p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6444e"]
 atlas = ExtResource("4_7p6j4")
@@ -115,6 +116,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ssoq"]
 size = Vector2(9, 12)
 
+[sub_resource type="Gradient" id="Gradient_evi0p"]
+offsets = PackedFloat32Array(0.0024038462, 0.23317307)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lsmp6"]
+gradient = SubResource("Gradient_evi0p")
+fill = 1
+fill_from = Vector2(0.4982639, 0.515625)
+repeat = 2
+
 [node name="Level1" type="Node2D" unique_id=1938528104]
 script = ExtResource("1_8ffim")
 
@@ -136,8 +147,19 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_6ssoq")
 
 [node name="Lvl1_Eureka" parent="." unique_id=879822063 instance=ExtResource("5_6444e")]
-position = Vector2(985, 47)
+position = Vector2(37, 555)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lvl1_Eureka" unique_id=789621835]
+scale = Vector2(10, 10)
+energy = 2.15
+blend_mode = 2
+range_layer_min = -200
+range_layer_max = 200
+texture = SubResource("GradientTexture2D_lsmp6")
 
 [node name="Fade_transition" parent="." unique_id=2109049746 instance=ExtResource("2_xfk5q")]
+
+[node name="scuffling_lvl1" type="AudioStreamPlayer" parent="." unique_id=91441250]
+stream = ExtResource("6_evi0p")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

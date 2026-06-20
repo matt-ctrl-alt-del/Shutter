@@ -40,13 +40,14 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r8sue"]
-radius = 8.0
-height = 18.0
+radius = 6.0
+height = 14.0
 
 [node name="lvl2_eureka" type="CharacterBody2D" unique_id=1010007707]
 script = ExtResource("1_al2sh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1285917324]
+scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_rivp1")
 animation = &"idle"
 autoplay = "idle"
@@ -56,3 +57,4 @@ frame_progress = 0.42361096
 shape = SubResource("CapsuleShape2D_r8sue")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=795777966]
+zoom = Vector2(5, 5)

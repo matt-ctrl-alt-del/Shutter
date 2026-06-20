@@ -1,0 +1,12 @@
+res://Scenes/lvl_1_map.tscn
+res://Scenes/audio.tscn
+res://Scenes/main_menu.tscn
+res://Scenes/level_1.tscn
+res://Scenes/level_2.tscn
+res://Scenes/splash_screen.tscn
+res://Scenes/lvl_2_map.tscn
+res://Scenes/lvl1_eureka.tscn
+res://Script/lvl1_eureka.gd
+res://Script/level_1.gd
+res://Scenes/lvl_2_eureka.tscn
+res://Script/lvl_2_eureka.gd

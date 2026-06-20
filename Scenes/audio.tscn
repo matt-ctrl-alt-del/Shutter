@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://c1mfsp2kqn2gs"]
 
+[ext_resource type="AudioStream" uid="uid://sktt8ycswy1r" path="res://Audio/scufflinglvl1.mp3" id="1_c8j57"]
+[ext_resource type="AudioStream" uid="uid://ds5jn6othep6x" path="res://Audio/musicbox_lvl2.mp3" id="2_pess6"]
+[ext_resource type="AudioStream" uid="uid://dc2hvi2vek7c8" path="res://Audio/elevator_main.mp3" id="3_fqpxi"]
+
 [node name="Audio" type="Control" unique_id=1549175355]
 layout_mode = 3
 anchors_preset = 15
@@ -8,4 +12,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=2043920269]
+[node name="scuffling_lvl1" type="AudioStreamPlayer" parent="." unique_id=2043920269]
+stream = ExtResource("1_c8j57")
+
+[node name="musicbox_lvl2" type="AudioStreamPlayer" parent="." unique_id=1332716000]
+stream = ExtResource("2_pess6")
+
+[node name="elevator_main" type="AudioStreamPlayer" parent="." unique_id=85737684]
+stream = ExtResource("3_fqpxi")

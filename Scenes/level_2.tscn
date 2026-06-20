@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bqmo2ub18q2pe" path="res://Scenes/fade_transition.tscn" id="1_smnlx"]
 [ext_resource type="Texture2D" uid="uid://df8pc7r0y35vb" path="res://Sprites/exit.png" id="2_12fag"]
 [ext_resource type="PackedScene" uid="uid://d00f4bd0ej57o" path="res://Scenes/lvl_2_eureka.tscn" id="3_12fag"]
+[ext_resource type="AudioStream" uid="uid://ds5jn6othep6x" path="res://Audio/musicbox_lvl2.mp3" id="5_v36qu"]
+[ext_resource type="PackedScene" uid="uid://cigfpmbfakwyv" path="res://Scenes/lvl_2_map.tscn" id="6_cggpd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6444e"]
 atlas = ExtResource("2_12fag")
@@ -114,6 +116,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v36qu"]
 size = Vector2(9, 12)
 
+[sub_resource type="Gradient" id="Gradient_evi0p"]
+offsets = PackedFloat32Array(0.0024038462, 0.14663461)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cggpd"]
+gradient = SubResource("Gradient_evi0p")
+fill = 1
+fill_from = Vector2(0.4982639, 0.515625)
+repeat = 2
+
 [node name="Level_2" type="Node2D" unique_id=677171408]
 script = ExtResource("1_1q6tm")
 
@@ -138,6 +150,21 @@ autoplay = "exit"
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_v36qu")
 
-[node name="lvl2_eureka" parent="Area2D" unique_id=1010007707 instance=ExtResource("3_12fag")]
+[node name="musicbox_lvl2" type="AudioStreamPlayer" parent="." unique_id=824888058]
+stream = ExtResource("5_v36qu")
+
+[node name="lvl_2_map" parent="." unique_id=2141143468 instance=ExtResource("6_cggpd")]
+
+[node name="lvl2_eureka" parent="." unique_id=2099810824 instance=ExtResource("3_12fag")]
+z_index = 2
+position = Vector2(31, 605)
+
+[node name="PointLight2D" type="PointLight2D" parent="lvl2_eureka" unique_id=1473195140]
+scale = Vector2(10, 10)
+energy = 2.15
+blend_mode = 2
+range_layer_min = -200
+range_layer_max = 200
+texture = SubResource("GradientTexture2D_cggpd")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://chi1q5fprbi0y" path="res://Sprites/button_placeholders/quit_white.png" id="5_yhxw7"]
 [ext_resource type="Texture2D" uid="uid://cvfgcf20ea6va" path="res://Sprites/main_menu2.png" id="6_opfnp"]
 [ext_resource type="PackedScene" uid="uid://bqmo2ub18q2pe" path="res://Scenes/fade_transition.tscn" id="7_cp0ys"]
+[ext_resource type="AudioStream" uid="uid://dc2hvi2vek7c8" path="res://Audio/elevator_main.mp3" id="8_yhxw7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_opfnp"]
 atlas = ExtResource("6_opfnp")
@@ -190,6 +191,10 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="Fade_timer" type="Timer" parent="Fade_transition" unique_id=990578188]
+
+[node name="elevator_main" type="AudioStreamPlayer" parent="." unique_id=1369968410]
+stream = ExtResource("8_yhxw7")
+autoplay = true
 
 [connection signal="pressed" from="Container/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Container/Exit" to="." method="_on_exit_pressed"]

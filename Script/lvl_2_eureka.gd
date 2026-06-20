@@ -5,7 +5,7 @@ const SPEED = 110.0
 @onready var animated_sprite = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
-	var input_direction := Input.get_vector("left", "right", "up", "down")
+	var input_direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
 	# Handle jump.
 	if input_direction.x > 0:

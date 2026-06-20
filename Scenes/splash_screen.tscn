@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://chi64lgalk2yu" path="res://Sprites/shutter_splash.png" id="1_6b1b0"]
 [ext_resource type="Script" uid="uid://chb1jvduttsc3" path="res://Script/splash_screen.gd" id="1_wwf30"]
 [ext_resource type="PackedScene" uid="uid://27nrvwtcnht8" path="res://Scenes/main_menu.tscn" id="2_h5jmx"]
+[ext_resource type="AudioStream" uid="uid://bfvb3ea1cj43l" path="res://Audio/splash_shutter.wav" id="4_hnr0x"]
 
 [node name="Splash_Screen_Manager" type="Control" unique_id=767500590 node_paths=PackedStringArray("splash_screen")]
 layout_mode = 3
@@ -34,3 +35,7 @@ grow_vertical = 2
 [node name="TextureRect" type="TextureRect" parent="CenterContainer" unique_id=2137115911]
 layout_mode = 2
 texture = ExtResource("1_6b1b0")
+
+[node name="splash_motif" type="AudioStreamPlayer" parent="." unique_id=973352079]
+stream = ExtResource("4_hnr0x")
+autoplay = true
