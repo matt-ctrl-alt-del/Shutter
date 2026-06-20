@@ -1,9 +1,36 @@
 [gd_scene format=3 uid="uid://cow8jwwbknv5x"]
 
-[node name="Splash_Screen" type="Control" unique_id=767500590]
+[ext_resource type="Texture2D" uid="uid://chi64lgalk2yu" path="res://Sprites/shutter_splash.png" id="1_6b1b0"]
+[ext_resource type="Script" uid="uid://chb1jvduttsc3" path="res://Script/splash_screen.gd" id="1_wwf30"]
+[ext_resource type="PackedScene" uid="uid://27nrvwtcnht8" path="res://Scenes/main_menu.tscn" id="2_h5jmx"]
+
+[node name="Splash_Screen_Manager" type="Control" unique_id=767500590 node_paths=PackedStringArray("splash_screen")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wwf30")
+load_scene = ExtResource("2_h5jmx")
+splash_screen = NodePath("CenterContainer/TextureRect")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1022670152]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=68236416]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer" unique_id=2137115911]
+layout_mode = 2
+texture = ExtResource("1_6b1b0")

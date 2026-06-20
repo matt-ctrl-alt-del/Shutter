@@ -7,3 +7,5 @@ res://Script/lvl_2_eureka.gd
 res://Script/level_1.gd
 res://Script/lvl1_eureka.gd
 res://Scenes/main_menu.tscn
+res://Scenes/splash_screen.tscn
+res://Script/splash_screen.gd
