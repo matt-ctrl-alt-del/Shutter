@@ -9,3 +9,6 @@ res://Script/lvl1_eureka.gd
 res://Scenes/main_menu.tscn
 res://Scenes/splash_screen.tscn
 res://Script/splash_screen.gd
+res://Scenes/thanks.tscn
+res://Scenes/level_2.tscn
+res://Script/level_2.gd
