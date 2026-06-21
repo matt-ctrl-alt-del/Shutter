@@ -176,6 +176,7 @@ shape = SubResource("RectangleShape2D_v36qu")
 
 [node name="musicbox_lvl2" type="AudioStreamPlayer" parent="." unique_id=824888058]
 stream = ExtResource("5_v36qu")
+autoplay = true
 
 [node name="lvl_2_map" parent="." unique_id=2141143468 instance=ExtResource("6_cggpd")]
 z_index = 1

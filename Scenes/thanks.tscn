@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://80v531qgfxku" path="res://Sprites/button_placeholders/quit_black.png" id="3_knko2"]
 [ext_resource type="Texture2D" uid="uid://chi1q5fprbi0y" path="res://Sprites/button_placeholders/quit_white.png" id="4_cx8gr"]
 [ext_resource type="Texture2D" uid="uid://b6fyp8e5l8ivh" path="res://Sprites/exit_menu.png" id="5_ub78a"]
+[ext_resource type="AudioStream" uid="uid://dc2hvi2vek7c8" path="res://Audio/elevator_main.mp3" id="7_cx8gr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_knko2"]
 atlas = ExtResource("5_ub78a")
@@ -177,6 +178,10 @@ texture_pressed = ExtResource("4_cx8gr")
 position = Vector2(576, 324)
 sprite_frames = SubResource("SpriteFrames_ifa1r")
 autoplay = "default"
+
+[node name="elevator_main" type="AudioStreamPlayer" parent="." unique_id=258455661]
+stream = ExtResource("7_cx8gr")
+autoplay = true
 
 [connection signal="pressed" from="Container/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Container/Exit" to="." method="_on_exit_pressed"]

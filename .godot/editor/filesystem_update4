@@ -9,3 +9,4 @@ res://Script/level_1.gd
 res://Script/label.gd
 res://Script/thanks.gd
 res://Scenes/thanks.tscn
+res://Scenes/level_2.tscn

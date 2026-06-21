@@ -173,7 +173,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_6ssoq")
 
 [node name="Lvl1_Eureka" parent="." unique_id=879822063 instance=ExtResource("5_6444e")]
-position = Vector2(37, 555)
+position = Vector2(1028, 68)
 
 [node name="PointLight2D" type="PointLight2D" parent="Lvl1_Eureka" unique_id=789621835]
 z_index = 5
@@ -203,6 +203,7 @@ texture = SubResource("GradientTexture2D_guojw")
 
 [node name="scuffling_lvl1" type="AudioStreamPlayer" parent="." unique_id=91441250]
 stream = ExtResource("6_evi0p")
+autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1645870455]
 
