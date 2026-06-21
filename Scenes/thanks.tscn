@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://chi1q5fprbi0y" path="res://Sprites/button_placeholders/quit_white.png" id="4_cx8gr"]
 [ext_resource type="Texture2D" uid="uid://b6fyp8e5l8ivh" path="res://Sprites/exit_menu.png" id="5_ub78a"]
 [ext_resource type="AudioStream" uid="uid://dc2hvi2vek7c8" path="res://Audio/elevator_main.mp3" id="7_cx8gr"]
+[ext_resource type="PackedScene" uid="uid://bqmo2ub18q2pe" path="res://Scenes/fade_transition.tscn" id="8_atvgh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_knko2"]
 atlas = ExtResource("5_ub78a")
@@ -182,6 +183,10 @@ autoplay = "default"
 [node name="elevator_main" type="AudioStreamPlayer" parent="." unique_id=258455661]
 stream = ExtResource("7_cx8gr")
 autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1374343442]
+
+[node name="Fade_transition" parent="CanvasLayer" unique_id=962432107 instance=ExtResource("8_atvgh")]
 
 [connection signal="pressed" from="Container/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Container/Exit" to="." method="_on_exit_pressed"]

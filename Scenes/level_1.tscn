@@ -9,9 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://dlnqv7probs3s" path="res://Scenes/joystick.tscn" id="7_lsmp6"]
 [ext_resource type="Texture2D" uid="uid://l5kga57vq482" path="res://Sprites/button_placeholders/jump_blk.png" id="8_wrinw"]
 [ext_resource type="Texture2D" uid="uid://4ywykp8g60dd" path="res://Sprites/button_placeholders/jump_wht.png" id="9_chwpn"]
+[ext_resource type="Texture2D" uid="uid://drm6h5rp4s57n" path="res://Audio/light_blk.png" id="9_pjppf"]
+[ext_resource type="PackedScene" uid="uid://dtql2i14ip4p7" path="res://Scenes/polaroid_tracker.tscn" id="10_6ioyp"]
 [ext_resource type="PackedScene" uid="uid://d6wanpy0jvp4" path="res://Scenes/polaroid_1.tscn" id="10_chwpn"]
+[ext_resource type="Texture2D" uid="uid://cfx0q4qja6bs" path="res://Audio/light_wht.png" id="10_yltlr"]
 [ext_resource type="PackedScene" uid="uid://bcgx850o46mpl" path="res://Scenes/polaroid_2.tscn" id="11_6r07y"]
+[ext_resource type="Texture2D" uid="uid://bg6k62we1yb1u" path="res://Sprites/button_placeholders/background_progressbar.png" id="11_8i23i"]
 [ext_resource type="PackedScene" uid="uid://bd1bnnqvue5u1" path="res://Scenes/polaroid_3.tscn" id="12_6ioyp"]
+[ext_resource type="Texture2D" uid="uid://2jqrmcnbkm0u" path="res://Sprites/button_placeholders/main_progressbar.png" id="12_8yhm2"]
 [ext_resource type="PackedScene" uid="uid://d2x0b7cckovoi" path="res://Scenes/polaroid_4.tscn" id="13_oovug"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6444e"]
@@ -151,6 +156,19 @@ gradient = SubResource("Gradient_6ioyp")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="InputEventAction" id="InputEventAction_pjppf"]
+action = &"jump"
+
+[sub_resource type="Shortcut" id="Shortcut_pjppf"]
+events = [SubResource("InputEventAction_pjppf")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_yltlr"]
+action = &"light"
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_imks0"]
+events = [SubResource("InputEventAction_yltlr")]
+
 [node name="Level1" type="Node2D" unique_id=1938528104]
 script = ExtResource("1_8ffim")
 
@@ -173,7 +191,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_6ssoq")
 
 [node name="Lvl1_Eureka" parent="." unique_id=879822063 instance=ExtResource("5_6444e")]
-position = Vector2(1028, 68)
+position = Vector2(841, 57)
 
 [node name="PointLight2D" type="PointLight2D" parent="Lvl1_Eureka" unique_id=789621835]
 z_index = 5
@@ -199,32 +217,43 @@ texture = SubResource("GradientTexture2D_mbl1c")
 color = Color(0, 1, 1, 1)
 texture = SubResource("GradientTexture2D_guojw")
 
-[node name="Fade_transition" parent="." unique_id=2109049746 instance=ExtResource("2_xfk5q")]
-
 [node name="scuffling_lvl1" type="AudioStreamPlayer" parent="." unique_id=91441250]
 stream = ExtResource("6_evi0p")
 autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1645870455]
+layer = 100
 
 [node name="joystick" parent="CanvasLayer" unique_id=1294544369 instance=ExtResource("7_lsmp6")]
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=1477044347]
-offset_left = 26.0
-offset_top = 44.0
-offset_right = 107.0
-offset_bottom = 67.0
+offset_left = 27.0
+offset_top = 94.0
+offset_right = 184.0
+offset_bottom = 117.0
 text = "Polaroids Collected: "
 
 [node name="Label2" type="Label" parent="CanvasLayer" unique_id=1256566689]
-offset_left = 26.0
-offset_top = 67.0
-offset_right = 107.0
-offset_bottom = 90.0
+offset_left = 27.0
+offset_top = 117.0
+offset_right = 182.0
+offset_bottom = 140.0
 text = "Polaroids Needed: 4"
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer" unique_id=648032686]
-z_index = 2
+[node name="Label3" type="Label" parent="CanvasLayer" unique_id=483095543]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -45.0
+offset_right = 45.0
+offset_bottom = 23.0
+grow_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 70)
+text = "Light Meter"
+
+[node name="Jump" type="TextureButton" parent="CanvasLayer" unique_id=648032686]
+z_index = 5
 z_as_relative = false
 anchors_preset = 3
 anchor_left = 1.0
@@ -232,31 +261,70 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -222.0
-offset_top = -78.0
+offset_top = -96.0
 offset_right = -50.0
-offset_bottom = -36.0
+offset_bottom = -54.0
 grow_horizontal = 0
 grow_vertical = 0
-toggle_mode = true
+shortcut = SubResource("Shortcut_pjppf")
 texture_normal = ExtResource("8_wrinw")
 texture_pressed = ExtResource("9_chwpn")
+
+[node name="Light" type="TextureButton" parent="CanvasLayer" unique_id=1548060172]
+z_index = 5
+offset_left = 930.0
+offset_top = 476.0
+offset_right = 1102.0
+offset_bottom = 518.0
+shortcut = SubResource("Shortcut_imks0")
+texture_normal = ExtResource("9_pjppf")
+texture_pressed = ExtResource("10_yltlr")
+
+[node name="LightMeter" type="TextureProgressBar" parent="CanvasLayer" unique_id=1529363383]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -86.0
+offset_right = 86.0
+offset_bottom = 42.0
+grow_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 20)
+value = 100.0
+texture_under = ExtResource("11_8i23i")
+texture_progress = ExtResource("12_8yhm2")
+
+[node name="Polaroid_tracker" parent="CanvasLayer" unique_id=645285928 instance=ExtResource("10_6ioyp")]
+mouse_filter = 2
+
+[node name="EnergyMeter" type="TextureProgressBar" parent="CanvasLayer" unique_id=355297794]
+offset_left = 930.0
+offset_top = 434.0
+offset_right = 1102.0
+offset_bottom = 476.0
+texture_under = ExtResource("11_8i23i")
+texture_progress = ExtResource("12_8yhm2")
+
+[node name="Fade_transition" parent="CanvasLayer" unique_id=2109049746 instance=ExtResource("2_xfk5q")]
+visible = false
 
 [node name="Polaroids" type="Node" parent="." unique_id=1918660951]
 
 [node name="Polaroid_1" parent="Polaroids" unique_id=186612381 instance=ExtResource("10_chwpn")]
-position = Vector2(93, 562)
+position = Vector2(976, 64)
 
 [node name="Polaroid_2" parent="Polaroids" unique_id=596494269 instance=ExtResource("11_6r07y")]
-position = Vector2(386, 411)
+position = Vector2(996, 72)
 
 [node name="Polaroid_3" parent="Polaroids" unique_id=1705953611 instance=ExtResource("12_6ioyp")]
-position = Vector2(495, 224)
+position = Vector2(977, 65)
 
 [node name="Polaroid_4" parent="Polaroids" unique_id=1078789594 instance=ExtResource("13_oovug")]
-position = Vector2(633, 126)
+position = Vector2(1028, 57)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Jump" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Light" to="." method="_on_light_pressed"]
 [connection signal="body_entered" from="Polaroids/Polaroid_1" to="." method="_on_polaroid_1_body_entered"]
 [connection signal="body_entered" from="Polaroids/Polaroid_2" to="." method="_on_polaroid_2_body_entered"]
 [connection signal="body_entered" from="Polaroids/Polaroid_3" to="." method="_on_polaroid_3_body_entered"]

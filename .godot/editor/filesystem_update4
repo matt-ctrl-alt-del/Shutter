@@ -10,3 +10,9 @@ res://Script/label.gd
 res://Script/thanks.gd
 res://Scenes/thanks.tscn
 res://Scenes/level_2.tscn
+res://Script/polaroid_tracker.gd
+res://Scenes/polaroid_tracker.tscn
+res://Scenes/fade_transition.tscn
+res://Scenes/joystick.tscn
+res://Scenes/lvl1_eureka.tscn
+res://Script/lvl1_eureka.gd

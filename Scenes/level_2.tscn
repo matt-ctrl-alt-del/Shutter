@@ -10,6 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://bcgx850o46mpl" path="res://Scenes/polaroid_2.tscn" id="8_t7v2y"]
 [ext_resource type="PackedScene" uid="uid://bd1bnnqvue5u1" path="res://Scenes/polaroid_3.tscn" id="9_ait6c"]
 [ext_resource type="PackedScene" uid="uid://d2x0b7cckovoi" path="res://Scenes/polaroid_4.tscn" id="10_vcilj"]
+[ext_resource type="PackedScene" uid="uid://dtql2i14ip4p7" path="res://Scenes/polaroid_tracker.tscn" id="11_t7v2y"]
+[ext_resource type="Texture2D" uid="uid://bg6k62we1yb1u" path="res://Sprites/button_placeholders/background_progressbar.png" id="12_vcilj"]
+[ext_resource type="Texture2D" uid="uid://2jqrmcnbkm0u" path="res://Sprites/button_placeholders/main_progressbar.png" id="13_bl0du"]
+[ext_resource type="Texture2D" uid="uid://drm6h5rp4s57n" path="res://Audio/light_blk.png" id="14_q0ycs"]
+[ext_resource type="Texture2D" uid="uid://cfx0q4qja6bs" path="res://Audio/light_wht.png" id="15_hj5x7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6444e"]
 atlas = ExtResource("2_12fag")
@@ -148,14 +153,15 @@ gradient = SubResource("Gradient_6ioyp")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="InputEventAction" id="InputEventAction_yltlr"]
+action = &"light"
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_yvrk7"]
+events = [SubResource("InputEventAction_yltlr")]
+
 [node name="Level_2" type="Node2D" unique_id=677171408]
 script = ExtResource("1_1q6tm")
-
-[node name="fade_animation" parent="." unique_id=2109049746 instance=ExtResource("1_smnlx")]
-offset_left = 1129.0
-offset_top = 74.0
-offset_right = 1129.0
-offset_bottom = 74.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=372098510]
 unique_name_in_owner = true
@@ -208,7 +214,7 @@ color = Color(0, 1, 1, 1)
 energy = 3.75
 blend_mode = 2
 texture = SubResource("GradientTexture2D_2mgoq")
-texture_scale = 2.5
+texture_scale = 2.0
 
 [node name="Polaroids" type="Node" parent="." unique_id=1242485811]
 
@@ -248,21 +254,71 @@ action_down = &"move_down"
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=945395276]
 unique_name_in_owner = true
 z_index = 100
-offset_left = 26.0
-offset_top = 49.0
-offset_right = 179.0
-offset_bottom = 72.0
+offset_left = 28.0
+offset_top = 101.0
+offset_right = 181.0
+offset_bottom = 124.0
 text = "Polaroids Collected:"
 
 [node name="Label2" type="Label" parent="CanvasLayer" unique_id=264034290]
-offset_left = 26.0
-offset_top = 67.0
-offset_right = 107.0
-offset_bottom = 90.0
+offset_left = 28.0
+offset_top = 119.0
+offset_right = 183.0
+offset_bottom = 142.0
 text = "Polaroids Needed: 4"
+
+[node name="Label3" type="Label" parent="CanvasLayer" unique_id=1275118615]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -45.0
+offset_right = 45.0
+offset_bottom = 23.0
+grow_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 70)
+text = "Light Meter"
+
+[node name="Polaroid_tracker" parent="CanvasLayer" unique_id=645285928 instance=ExtResource("11_t7v2y")]
+
+[node name="Fade_transition" parent="CanvasLayer" unique_id=2109049746 instance=ExtResource("1_smnlx")]
+visible = false
+
+[node name="LightMeter" type="TextureProgressBar" parent="CanvasLayer" unique_id=1598818816]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -86.0
+offset_right = 86.0
+offset_bottom = 42.0
+grow_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 20)
+value = 100.0
+texture_under = ExtResource("12_vcilj")
+texture_progress = ExtResource("13_bl0du")
+
+[node name="Light" type="TextureButton" parent="CanvasLayer" unique_id=2099586168]
+z_index = 5
+offset_left = 930.0
+offset_top = 476.0
+offset_right = 1102.0
+offset_bottom = 518.0
+shortcut = SubResource("Shortcut_yvrk7")
+texture_normal = ExtResource("14_q0ycs")
+texture_pressed = ExtResource("15_hj5x7")
+
+[node name="EnergyMeter" type="TextureProgressBar" parent="CanvasLayer" unique_id=2138795861]
+offset_left = 930.0
+offset_top = 434.0
+offset_right = 1102.0
+offset_bottom = 476.0
+texture_under = ExtResource("12_vcilj")
+texture_progress = ExtResource("13_bl0du")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Polaroids/Polaroid_1" to="." method="_on_polaroid_1_body_entered"]
 [connection signal="body_entered" from="Polaroids/Polaroid_2" to="." method="_on_polaroid_2_body_entered"]
 [connection signal="body_entered" from="Polaroids/Polaroid_3" to="." method="_on_polaroid_3_body_entered"]
 [connection signal="body_entered" from="Polaroids/Polaroid_4" to="." method="_on_polaroid_4_body_entered"]
+[connection signal="pressed" from="CanvasLayer/Light" to="." method="_on_light_pressed"]
