@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhs283x37gcdw"
-path="res://.godot/imported/dust.png-b8b99c307aaf50c1807ee8303dd1d1a7.ctex"
+uid="uid://cky7w5vdvspnm"
+path="res://.godot/imported/color_dust.png-4e0c48e840aa577b23a2e11f51a906c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Map/prlx_bg/dust.png"
-dest_files=["res://.godot/imported/dust.png-b8b99c307aaf50c1807ee8303dd1d1a7.ctex"]
+source_file="res://Sprites/prlx_bg/color_dust.png"
+dest_files=["res://.godot/imported/color_dust.png-4e0c48e840aa577b23a2e11f51a906c2.ctex"]
 
 [params]
 

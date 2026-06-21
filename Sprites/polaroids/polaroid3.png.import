@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc1ere2s7kebw"
-path="res://.godot/imported/bubble.png-a7ac62b0e5f67c53c262add144ee26d2.ctex"
+uid="uid://b8kxwtrv0unce"
+path="res://.godot/imported/polaroid3.png-b6f6eed01584f522ecc0e42ebe4f3964.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Map/prlx_bg/bubble.png"
-dest_files=["res://.godot/imported/bubble.png-a7ac62b0e5f67c53c262add144ee26d2.ctex"]
+source_file="res://Sprites/polaroids/polaroid3.png"
+dest_files=["res://.godot/imported/polaroid3.png-b6f6eed01584f522ecc0e42ebe4f3964.ctex"]
 
 [params]
 

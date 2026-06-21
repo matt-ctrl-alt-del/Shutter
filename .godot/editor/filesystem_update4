@@ -1,6 +1,11 @@
-res://Scenes/lvl1_eureka.tscn
+res://Scenes/label.tscn
+res://Script/prologue.gd
+res://Scenes/prologue.tscn
+res://Scenes/main_menu.tscn
+res://Script/main_menu.gd
 res://Scenes/level_1.tscn
-res://Script/lvl1_eureka.gd
-res://Scenes/joystick.tscn
-res://Scenes/level_2.tscn
+res://Script/level_2.gd
 res://Script/level_1.gd
+res://Script/label.gd
+res://Script/thanks.gd
+res://Scenes/thanks.tscn

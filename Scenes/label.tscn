@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://basmjmgt75x2b"]
+
+[ext_resource type="Script" uid="uid://dsxfwthgtk84p" path="res://Script/label.gd" id="1_1ytir"]
+
+[node name="Label" type="Label" unique_id=682015637]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+script = ExtResource("1_1ytir")

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dlk84nffmebio"]
 
+[ext_resource type="Script" uid="uid://rrlstkq6odu" path="res://Script/thanks.gd" id="1_knko2"]
 [ext_resource type="Texture2D" uid="uid://yeb1s7md6mxh" path="res://Sprites/button_placeholders/start_black.png" id="1_msi2n"]
 [ext_resource type="Texture2D" uid="uid://4cw2blqa5cck" path="res://Sprites/button_placeholders/start_white.png" id="2_ub78a"]
 [ext_resource type="Texture2D" uid="uid://80v531qgfxku" path="res://Sprites/button_placeholders/quit_black.png" id="3_knko2"]
@@ -128,7 +129,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hyxg8")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -140,6 +141,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_knko2")
 
 [node name="Container" type="Control" parent="." unique_id=714006251]
 layout_mode = 1
@@ -175,3 +177,6 @@ texture_pressed = ExtResource("4_cx8gr")
 position = Vector2(576, 324)
 sprite_frames = SubResource("SpriteFrames_ifa1r")
 autoplay = "default"
+
+[connection signal="pressed" from="Container/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Container/Exit" to="." method="_on_exit_pressed"]

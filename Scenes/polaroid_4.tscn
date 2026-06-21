@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://d2x0b7cckovoi"]
+
+[ext_resource type="Texture2D" uid="uid://x0j5wbgym1qu" path="res://Sprites/polaroids/polaroid4.png" id="1_qdte7"]
+
+[sub_resource type="Gradient" id="Gradient_qdte7"]
+offsets = PackedFloat32Array(0.17067307, 0.5168269)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1ce3n"]
+gradient = SubResource("Gradient_qdte7")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbl1c"]
+size = Vector2(10, 12)
+
+[node name="Polaroid_4" type="Area2D" unique_id=1078789594]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1643043649]
+texture = ExtResource("1_qdte7")
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D" unique_id=1328790211]
+z_index = 3
+range_layer_min = -200
+range_layer_max = 200
+texture = SubResource("GradientTexture2D_1ce3n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=983421475]
+shape = SubResource("RectangleShape2D_mbl1c")
