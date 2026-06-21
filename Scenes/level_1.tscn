@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bd1bnnqvue5u1" path="res://Scenes/polaroid_3.tscn" id="12_6ioyp"]
 [ext_resource type="Texture2D" uid="uid://2jqrmcnbkm0u" path="res://Sprites/button_placeholders/main_progressbar.png" id="12_8yhm2"]
 [ext_resource type="PackedScene" uid="uid://d2x0b7cckovoi" path="res://Scenes/polaroid_4.tscn" id="13_oovug"]
+[ext_resource type="PackedScene" uid="uid://wim3602kq75c" path="res://Scenes/camera_ui.tscn" id="15_yltlr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6444e"]
 atlas = ExtResource("4_7p6j4")
@@ -128,31 +129,31 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ssoq"]
 size = Vector2(9, 12)
 
-[sub_resource type="Gradient" id="Gradient_evi0p"]
+[sub_resource type="Gradient" id="Gradient_6ssoq"]
 offsets = PackedFloat32Array(0.0024038462, 0.23317307)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_lsmp6"]
-gradient = SubResource("Gradient_evi0p")
+gradient = SubResource("Gradient_6ssoq")
 fill = 1
 fill_from = Vector2(0.4982639, 0.515625)
 repeat = 2
 
-[sub_resource type="Gradient" id="Gradient_6r07y"]
+[sub_resource type="Gradient" id="Gradient_imks0"]
 offsets = PackedFloat32Array(0.30528846, 0.4591346, 0.65625)
 colors = PackedColorArray(1, 0, 1, 1, 0.15517235, 0.15517235, 0.15517235, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_mbl1c"]
-gradient = SubResource("Gradient_6r07y")
+gradient = SubResource("Gradient_imks0")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[sub_resource type="Gradient" id="Gradient_6ioyp"]
+[sub_resource type="Gradient" id="Gradient_dlmop"]
 offsets = PackedFloat32Array(0, 0.72836536)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_guojw"]
-gradient = SubResource("Gradient_6ioyp")
+gradient = SubResource("Gradient_dlmop")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -225,6 +226,7 @@ autoplay = true
 layer = 100
 
 [node name="joystick" parent="CanvasLayer" unique_id=1294544369 instance=ExtResource("7_lsmp6")]
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=1477044347]
 offset_left = 27.0
@@ -232,6 +234,7 @@ offset_top = 94.0
 offset_right = 184.0
 offset_bottom = 117.0
 text = "Polaroids Collected: "
+metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="CanvasLayer" unique_id=1256566689]
 offset_left = 27.0
@@ -239,6 +242,7 @@ offset_top = 117.0
 offset_right = 182.0
 offset_bottom = 140.0
 text = "Polaroids Needed: 4"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="CanvasLayer" unique_id=483095543]
 anchors_preset = 5
@@ -250,7 +254,8 @@ offset_bottom = 23.0
 grow_horizontal = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, 70)
-text = "Light Meter"
+text = "Light Meter (Life/Timer)"
+metadata/_edit_use_anchors_ = true
 
 [node name="Jump" type="TextureButton" parent="CanvasLayer" unique_id=648032686]
 z_index = 5
@@ -269,6 +274,7 @@ grow_vertical = 0
 shortcut = SubResource("Shortcut_pjppf")
 texture_normal = ExtResource("8_wrinw")
 texture_pressed = ExtResource("9_chwpn")
+metadata/_edit_use_anchors_ = true
 
 [node name="Light" type="TextureButton" parent="CanvasLayer" unique_id=1548060172]
 z_index = 5
@@ -279,6 +285,7 @@ offset_bottom = 518.0
 shortcut = SubResource("Shortcut_imks0")
 texture_normal = ExtResource("9_pjppf")
 texture_pressed = ExtResource("10_yltlr")
+metadata/_edit_use_anchors_ = true
 
 [node name="LightMeter" type="TextureProgressBar" parent="CanvasLayer" unique_id=1529363383]
 anchors_preset = 5
@@ -293,9 +300,11 @@ offset_transform_position = Vector2(0, 20)
 value = 100.0
 texture_under = ExtResource("11_8i23i")
 texture_progress = ExtResource("12_8yhm2")
+metadata/_edit_use_anchors_ = true
 
 [node name="Polaroid_tracker" parent="CanvasLayer" unique_id=645285928 instance=ExtResource("10_6ioyp")]
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="EnergyMeter" type="TextureProgressBar" parent="CanvasLayer" unique_id=355297794]
 offset_left = 930.0
@@ -304,8 +313,13 @@ offset_right = 1102.0
 offset_bottom = 476.0
 texture_under = ExtResource("11_8i23i")
 texture_progress = ExtResource("12_8yhm2")
+metadata/_edit_use_anchors_ = true
 
 [node name="Fade_transition" parent="CanvasLayer" unique_id=2109049746 instance=ExtResource("2_xfk5q")]
+metadata/_edit_use_anchors_ = true
+
+[node name="CameraUI" parent="CanvasLayer" unique_id=405191205 instance=ExtResource("15_yltlr")]
+visible = false
 
 [node name="Polaroids" type="Node" parent="." unique_id=1918660951]
 

@@ -6,7 +6,7 @@ var goal_polaroids = 4
 
 @export var max_light: float = 100.0
 @onready var current_light: float = max_light
-@export var light_drain_rate: float = 0.5 # Loses 5 light per second
+@export var light_drain_rate: float = 0.25 # Loses 5 light per second
 
 @export var toggle_light: float = 100.0
 @onready var current_energy: float = toggle_light
@@ -15,7 +15,7 @@ var goal_polaroids = 4
 func _ready() -> void:
 	$CanvasLayer/Fade_transition/AnimationPlayer.play("fade_out")
 	await $CanvasLayer/Fade_transition/AnimationPlayer.animation_finished
-	#$Area2D.hide()
+	$CanvasLayer/CameraUI.hide()
 
 func _process(delta: float) -> void:
 	current_light -= light_drain_rate * delta
@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	$CanvasLayer/LightMeter.value = current_light
 	
 	if current_light <= 0:
-		call_deferred("reload_current_scene")
+		get_tree().reload_current_scene()
 		
 	current_energy += light_supp_rate * delta
 	current_energy = clamp(current_energy, 0.0, toggle_light)
@@ -60,6 +60,12 @@ func _on_polaroid_1_body_entered(body: Node2D) -> void:
 	$CanvasLayer/Label.text = "Polaroids Collected: " + (str(polaroids_collected))
 	print("+1 Polaroid")
 	$CanvasLayer/Polaroid_tracker/HBoxContainer/Polaroid1.modulate.a = 1.0
+	$CanvasLayer/CameraUI.show()
+	$CanvasLayer/CameraUI/Frame/AnimationPlayer.play("fadein_frame")
+	await $CanvasLayer/CameraUI/Frame/AnimationPlayer.animation_finished
+	$CanvasLayer/CameraUI/Frame/AnimationPlayer.play("fadeout_frame")
+	await $CanvasLayer/CameraUI/Frame/AnimationPlayer.animation_finished
+	$CanvasLayer/CameraUI.hide()
 	
 
 
@@ -69,6 +75,12 @@ func _on_polaroid_2_body_entered(body: Node2D) -> void:
 	$CanvasLayer/Label.text = "Polaroids Collected: " + (str(polaroids_collected))
 	print("+1 Polaroid")
 	$CanvasLayer/Polaroid_tracker/HBoxContainer/Polaroid2.modulate.a = 1.0
+	$CanvasLayer/CameraUI.show()
+	$CanvasLayer/CameraUI/Frame/AnimationPlayer.play("fadein_frame")
+	await $CanvasLayer/CameraUI/Frame/AnimationPlayer.animation_finished
+	$CanvasLayer/CameraUI/Frame/AnimationPlayer.play("fadeout_frame")
+	await $CanvasLayer/CameraUI/Frame/AnimationPlayer.animation_finished
+	$CanvasLayer/CameraUI.hide()
 	
 
 func _on_polaroid_3_body_entered(body: Node2D) -> void:
@@ -77,6 +89,12 @@ func _on_polaroid_3_body_entered(body: Node2D) -> void:
 	$CanvasLayer/Label.text = "Polaroids Collected: " + (str(polaroids_collected))
 	print("+1 Polaroid")
 	$CanvasLayer/Polaroid_tracker/HBoxContainer/Polaroid3.modulate.a = 1.0
+	$CanvasLayer/CameraUI.show()
+	$CanvasLayer/CameraUI/Frame/AnimationPlayer.play("fadein_frame")
+	await $CanvasLayer/CameraUI/Frame/AnimationPlayer.animation_finished
+	$CanvasLayer/CameraUI/Frame/AnimationPlayer.play("fadeout_frame")
+	await $CanvasLayer/CameraUI/Frame/AnimationPlayer.animation_finished
+	$CanvasLayer/CameraUI.hide()
 
 
 func _on_polaroid_4_body_entered(body: Node2D) -> void:
@@ -85,6 +103,12 @@ func _on_polaroid_4_body_entered(body: Node2D) -> void:
 	$CanvasLayer/Label.text = "Polaroids Collected: " + (str(polaroids_collected))
 	print("+1 Polaroid")
 	$CanvasLayer/Polaroid_tracker/HBoxContainer/Polaroid4.modulate.a = 1.0
+	$CanvasLayer/CameraUI.show()
+	$CanvasLayer/CameraUI/Frame/AnimationPlayer.play("fadein_frame")
+	await $CanvasLayer/CameraUI/Frame/AnimationPlayer.animation_finished
+	$CanvasLayer/CameraUI/Frame/AnimationPlayer.play("fadeout_frame")
+	await $CanvasLayer/CameraUI/Frame/AnimationPlayer.animation_finished
+	$CanvasLayer/CameraUI.hide()
 
 
 func _on_light_pressed() -> void:

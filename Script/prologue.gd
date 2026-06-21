@@ -16,4 +16,4 @@ func _on_button_pressed() -> void:
 	$CanvasLayer/Fade_transition/AnimationPlayer.play("fade_in")
 	await $CanvasLayer/Fade_transition/AnimationPlayer.animation_finished
 	$CanvasLayer/Fade_transition.queue_free()
-	get_tree().change_scene_to_file("res://Scenes/level_1.tscn")
+	get_tree().change_scene_to_file("res://Scenes/practice.tscn")

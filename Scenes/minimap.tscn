@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b70bs74j1eb7j"]
+
+[ext_resource type="PackedScene" uid="uid://cigfpmbfakwyv" path="res://Scenes/lvl_2_map.tscn" id="1_tkls4"]
+[ext_resource type="Texture2D" uid="uid://dlk7ioo2g2kl7" path="res://Sprites/playerinminimap.png" id="2_nfbsi"]
+
+[node name="Minimap" type="Node2D" unique_id=857408889]
+
+[node name="lvl_2_map" parent="." unique_id=2141143468 instance=ExtResource("1_tkls4")]
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=90897851]
+z_index = 2
+position = Vector2(138, 230)
+
+[node name="Sprite2D" type="Sprite2D" parent="player" unique_id=781853098]
+position = Vector2(9.5, 0.5)
+scale = Vector2(1.4375, 1.4375)
+texture = ExtResource("2_nfbsi")
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=1226377384]
