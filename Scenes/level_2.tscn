@@ -13,8 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://dtql2i14ip4p7" path="res://Scenes/polaroid_tracker.tscn" id="11_t7v2y"]
 [ext_resource type="Texture2D" uid="uid://bg6k62we1yb1u" path="res://Sprites/button_placeholders/background_progressbar.png" id="12_vcilj"]
 [ext_resource type="Texture2D" uid="uid://2jqrmcnbkm0u" path="res://Sprites/button_placeholders/main_progressbar.png" id="13_bl0du"]
-[ext_resource type="Texture2D" uid="uid://drm6h5rp4s57n" path="res://Audio/light_blk.png" id="14_q0ycs"]
-[ext_resource type="Texture2D" uid="uid://cfx0q4qja6bs" path="res://Audio/light_wht.png" id="15_hj5x7"]
+[ext_resource type="Texture2D" uid="uid://drm6h5rp4s57n" path="res://Sprites/button_placeholders/light_blk.png" id="14_q0ycs"]
+[ext_resource type="Texture2D" uid="uid://cfx0q4qja6bs" path="res://Sprites/button_placeholders/light_wht.png" id="15_hj5x7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6444e"]
 atlas = ExtResource("2_12fag")

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://chi1q5fprbi0y" path="res://Sprites/button_placeholders/quit_white.png" id="5_yhxw7"]
 [ext_resource type="Texture2D" uid="uid://cvfgcf20ea6va" path="res://Sprites/main_menu2.png" id="6_opfnp"]
 [ext_resource type="PackedScene" uid="uid://bqmo2ub18q2pe" path="res://Scenes/fade_transition.tscn" id="7_cp0ys"]
-[ext_resource type="Texture2D" uid="uid://confwmwg5ixll" path="res://Audio/main_menu3.png" id="7_trj04"]
+[ext_resource type="Texture2D" uid="uid://confwmwg5ixll" path="res://Sprites/main_menu3.png" id="7_trj04"]
 [ext_resource type="AudioStream" uid="uid://dc2hvi2vek7c8" path="res://Audio/elevator_main.mp3" id="8_yhxw7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_opfnp"]
@@ -299,10 +299,9 @@ position = Vector2(576, 324)
 sprite_frames = SubResource("SpriteFrames_jr6u5")
 animation = &"new"
 autoplay = "new"
-frame_progress = 0.7081507
+frame_progress = 0.24761811
 
 [node name="Fade_transition" parent="." unique_id=962432107 instance=ExtResource("7_cp0ys")]
-visible = false
 z_index = 2
 layout_mode = 0
 anchors_preset = 0
