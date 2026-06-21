@@ -191,7 +191,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_6ssoq")
 
 [node name="Lvl1_Eureka" parent="." unique_id=879822063 instance=ExtResource("5_6444e")]
-position = Vector2(841, 57)
+position = Vector2(27, 552)
 
 [node name="PointLight2D" type="PointLight2D" parent="Lvl1_Eureka" unique_id=789621835]
 z_index = 5
@@ -306,21 +306,20 @@ texture_under = ExtResource("11_8i23i")
 texture_progress = ExtResource("12_8yhm2")
 
 [node name="Fade_transition" parent="CanvasLayer" unique_id=2109049746 instance=ExtResource("2_xfk5q")]
-visible = false
 
 [node name="Polaroids" type="Node" parent="." unique_id=1918660951]
 
 [node name="Polaroid_1" parent="Polaroids" unique_id=186612381 instance=ExtResource("10_chwpn")]
-position = Vector2(976, 64)
+position = Vector2(466, 518)
 
 [node name="Polaroid_2" parent="Polaroids" unique_id=596494269 instance=ExtResource("11_6r07y")]
-position = Vector2(996, 72)
+position = Vector2(372, 332)
 
 [node name="Polaroid_3" parent="Polaroids" unique_id=1705953611 instance=ExtResource("12_6ioyp")]
-position = Vector2(977, 65)
+position = Vector2(945, 174)
 
 [node name="Polaroid_4" parent="Polaroids" unique_id=1078789594 instance=ExtResource("13_oovug")]
-position = Vector2(1028, 57)
+position = Vector2(458, 117)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Jump" to="." method="_on_texture_button_pressed"]
