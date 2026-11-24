@@ -15,6 +15,10 @@ Light Meter is your life. 	You cannot exit a level until you have found all pola
 This game can be played with a controller.
 Best played with earphones.
 
+<h3> Play: </h3>
+It can be played at: 
+https://matt-not-found.itch.io/shutter
+
 <h3> Tools: </h3>
 I used Godot and Gdscript, for the art I used Aseprite/Libresprite, and I also used REAPER for the audio. 
 
